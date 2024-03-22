@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KINDSHARE</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="vendor/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+       <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <!-- Logo and website name -->
+            <a class="navbar-brand" href="#">
+                <img src="assets/images/KINDSHARE-removebg-preview.png" alt="Your Logo" class="navbarlogo">
+                <span style="color: #fff;">KINDSHARE</span>
+            </a>
+  
+            <!-- Navbar toggler for mobile devices -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+  
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="#home">
+                          <i class="bi bi-house-door"></i> Home
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#mission">
+                          <i class="bi bi-bullseye"></i> Mission
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#contact">
+                          <i class="bi bi-telephone"></i> Contact
+                      </a>
+                  </li>
+                  
+              </ul>
+            </div>
+        </div>
+      </nav>
+  
+      <!-- Home Section -->
+      <div class="section home" id="home">
+          <div class="home-container">
+              <!-- Left Side -->
+              <div class="home-left">
+                  <h5>Welcome to KINDSHARE, Zyy Sal!</h5>
+                  <h3>“Your Trash is Their Treasure”</h3>
+                  <h6>Together We Share, Together We Care</h6>
+                  <button class="btn btn-primary" id="donateButton" data-bs-toggle="modal" data-bs-target="#donationModal">
+                      <i class="bi bi-cash-coin"></i> Donate Here
+                  </button>
+                  <!-- Donation Modal -->
+                      <div class="modal fade" id="donationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                              <div class="modal-content">
+                                  <div class="modal-header">
+                                      <h5 class="modal-title" id="exampleModalLabel">Choose Donation Type</h5>
+                                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                  </div>
+                                  <div class="modal-body">
+                                      <ul class="nav nav-tabs" id="donationTabs" role="tablist">
+                                          <li class="nav-item" role="presentation">
+                                              <a class="nav-link active" id="items-tab" data-bs-toggle="tab" href="#items" role="tab" aria-controls="items" aria-selected="true">Items</a>
+                                          </li>
+                                          <li class="nav-item" role="presentation">
+                                              <a class="nav-link" id="food-tab" data-bs-toggle="tab" href="#food" role="tab" aria-controls="food" aria-selected="false">Food</a>
+                                          </li>
+                                          <li class="nav-item" role="presentation">
+                                              <a class="nav-link" id="money-tab" data-bs-toggle="tab" href="#money" role="tab" aria-controls="money" aria-selected="false">Money</a>
+                                          </li>
+                                      </ul>
+                                      <div class="tab-content mt-2">
+                                          <!-- Items Tab -->
+                                          <div class="tab-pane fade show active" id="items" role="tabpanel" aria-labelledby="items-tab">
+                                              <form>
+                                                  <!-- Items form fields go here -->
+                                                  <div class="mb-3">
+                                                      <label for="nameItems" class="form-label">Fullname</label>
+                                                      <input type="text" class="form-control" id="nameItems" required>
+                                                  </div>
+                                                  <div class="mb-3">
+                                                      <label for="emailItems" class="form-label">Email Address</label>
+                                                      <input type="email" class="form-control" id="emailItems" required>
+                                                  </div>
+                                                  <div class="mb-3">
+                                                      <label for="phoneNumberItems" class="form-label">Phone Number</label>
+                                                      <input type="tel" class="form-control" id="phoneNumberItems" pattern="[0-9]{11}" required>
+                                                  </div>
+                                                  <div class="mb-3">
+                                                      <label for="locationItems" class="form-label">Location</label>
+                                                      <input type="text" class="form-control" id="locationItems" required>
+                                                  </div>
+                                                  <div class="mb-3">
+                                                      <label for="itemType" class="form-label">Type of Item</label>
+                                                      <select class="form-select" id="itemType" required onchange="checkOtherType()">
+                                                          <option value="" disabled selected>Select type</option>
+                                                          <option value="Clothing">Clothing</option>
+                                                          <option value="Electronics">Electronics</option>
+                                                          <option value="Furniture">Furniture</option>
+                                                          <option value="Other">Other</option>
+                                                      </select>
+                                                  </div>
+                                                  <div class="mb-3">
+                                                      <label for="itemDescription" class="form-label">Item Description</label>
+                                                      <textarea class="form-control" id="itemDescription" rows="4" required></textarea>
+                                                  </div>
+                                                  <div class="mb-3">
+                                                      <label for="quantityItems" class="form-label">Quantity</label>
+                                                      <input type="number" class="form-control" id="quantityItems" required>
+                                                  </div>
+                                                  <button type="button" class="btn btn-primary" onclick="submitItems()">Submit</button>
+                                              </form>
+                                          </div>
+                                          
+                                          <!-- Food Tab -->
+                                          <div class="tab-pane fade" id="food" role="tabpanel" aria-labelledby="food-tab">
+                                              <form>
+                                                  <!-- Food form fields go here -->
+                                                  <div class="mb-3">
+                                                      <label for="nameFood" class="form-label">Fullname</label>
+                                                      <input type="text" class="form-control" id="nameFood" required>
+                                                  </div>
+                                                  <div class="mb-3">
+                                                      <label for="emailFood" class="form-label">Email Address</label>
+                                                      <input type="email" class="form-control" id="emailFood" required>
+                                                  </div>
+                                                  <div class="mb-3">
+                                                      <label for="phoneNumberFood" class="form-label">Phone Number</label>
+                                                      <input type="tel" class="form-control" id="phoneNumberFood" pattern="[0-9]{11}" required>
+                                                  </div>
+                                                  <div class="mb-3">
+                                                      <label for="locationFood" class="form-label">Location</label>
+                                                      <input type="text" class="form-control" id="locationFood" required>
+                                                  </div>
+                                                  <div class="mb-3">
+                                                      <label for="foodType" class="form-label">Type of Food</label>
+                                                      <select class="form-select" id="foodType" required onchange="checkOtherFoodType()">
+                                                          <option value="" disabled selected>Select type</option>
+                                                          <option value="Canned Goods">Canned Goods</option>
+                                                          <option value="Perishable">Perishable</option>
+                                                          <option value="Ready-to-eat">Ready-to-eat</option>
+                                                          <option value="Other">Other</option>
+                                                      </select>
+                                                  </div>
+                                                  <div class="mb-3">
+                                                      <label for="foodDescription" class="form-label">Food Description</label>
+                                                      <textarea class="form-control" id="foodDescription" rows="4" required></textarea>
+                                                  </div>
+                                                  <div class="mb-3">
+                                                      <label for="quantityFood" class="form-label">Quantity</label>
+                                                      <input type="number" class="form-control" id="quantityFood" required>
+                                                  </div>
+                                                  <button type="button" class="btn btn-primary" onclick="submitFood()">Submit</button>
+                                              </form>
+                                          </div>
+                                          
+                                          <!-- Money Tab -->
+                                          <div class="tab-pane fade" id="money" role="tabpanel" aria-labelledby="money-tab">
+                                              <form>
+                                                  <!-- Money form fields go here -->
+                                                  <div class="mb-3">
+                                                      <label for="nameMoney" class="form-label">Fullname</label>
+                                                      <input type="text" class="form-control" id="nameMoney" required>
+                                                  </div>
+                                                  <div class="mb-3">
+                                                      <label for="emailMoney" class="form-label">Email Address</label>
+                                                      <input type="email" class="form-control" id="emailMoney" required>
+                                                  </div>
+                                                  <div class="mb-3">
+                                                      <label for="phoneNumberMoney" class="form-label">Phone Number</label>
+                                                      <input type="tel" class="form-control" id="phoneNumberMoney" pattern="[0-9]{11}" required>
+                                                  </div>
+                                                  <div class="mb-3">
+                                                      <label for="locationMoney" class="form-label">Location</label>
+                                                      <input type="text" class="form-control" id="locationMoney" required>
+                                                  </div>
+                                                  <div class="mb-3">
+                                                      <label for="paymentMethod" class="form-label">Payment Method</label>
+                                                      <select class="form-select" id="paymentMethod" required onchange="showPaymentInfo()">
+                                                          <option value="" disabled selected>Select method</option>
+                                                          <option value="GCash">GCash</option>
+                                                          <option value="CreditCard">Credit Card</option>
+                                                      </select>
+                                                  </div>
+                                                  <!-- Hidden pop-up info forms for each payment method -->
+                                                  <!-- Hidden pop-up info form for GCash donation -->
+                                                      <div id="gcashInfo" style="display: none;">
+                                                          <h5>Kingdom Life GCash Information</h5>
+                                                          <form>
+                                                              <div class="mb-3">
+                                                                  <label for="gcashName" class="form-label">Full Name</label>
+                                                                  <h6>KINGDOM LIFE BUTUAN</h6>
+                                                              </div>
+                                                              <div class="mb-3">
+                                                                  <label for="gcashNumber" class="form-label">GCash Number</label>
+                                                                  <h6>09463406001</h6>
+                                                              </div>
+                                                              <!-- Image of QR Code for GCash -->
+                                                              <div class="mb-3">
+                                                                  <label for="gcashQRCode" class="form-label">Scan QR Code</label><br>
+                                                                  <img src="assets/images/donate.png" alt="GCash QR Code" id="gcashQRCode" width="200">
+                                                              </div>
+                                                          </form>
+                                                      </div>   
+                                                  <!-- Hidden pop-up info form for Credit Card -->
+                                                      <div id="creditCardInfo" style="display: none;">
+                                                          <form>
+                                                              <div class="mb-3">
+                                                                  <label for="cardholderName" class="form-label">Cardholder Name</label>
+                                                                  <input type="text" class="form-control" id="cardholderName" required>
+                                                              </div>
+                                                              <div class="mb-3">
+                                                                  <label for="cardNumber" class="form-label">Card Number</label>
+                                                                  <input type="text" class="form-control" id="cardNumber" required>
+                                                              </div>
+                                                              <div class="row">
+                                                                  <div class="col-md-6 mb-3">
+                                                                      <label for="expiryDate" class="form-label">Expiry Date</label>
+                                                                      <input type="text" class="form-control" id="expiryDate" placeholder="MM/YY" required>
+                                                                  </div>
+                                                                  <div class="col-md-6 mb-3">
+                                                                      <label for="cvv" class="form-label">CVV</label>
+                                                                      <input type="text" class="form-control" id="cvv" required>
+                                                                  </div>
+                                                              </div>
+                                                          </form>
+                                                      </div>
+                                                  <button type="button" class="btn btn-primary" onclick="submitMoney()">Submit</button>
+                                              </form>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                      
+              </div>
+  
+              <!-- Right Side -->
+              <div class="home-right">
+                  <div class="img-container">
+                      <img src="assets/images/klb.jpg" alt="Image 2">
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+      <!-- Mission Section -->
+      <div id="mission">
+          <h2>Our Mission</h2>
+          <div class="flippable-cards-container">
+              <!-- Flippable Card 1 - Reduce -->
+              <div class="flippable-card">
+                  <div class="card-inner">
+                      <div class="card-front p-4">
+                          <i class="bi bi-graph-down-arrow" id="icon1" ></i>
+                          <h3>Reduce</h3>
+                          <span>Cut down on waste by reusing items. 
+                          Help the environment and also support people in need, reducing poverty.</span>
+                      </div>
+                      <div class="card-back">
+                          <img src="assets/images/items.jpg" alt="" class="p-3" width="300px" height="300px">
+                      </div>
+                  </div>
+              </div>
+  
+              <!-- Flippable Card 2 - Establish -->
+              <div class="flippable-card">
+                  <div class="card-inner">
+                      <div class="card-front p-4">
+                          <i class="bi bi-check-circle" id="icon2" ></i>
+                          <h3>Establish</h3>
+                          <span>Set up a system to share useful items with those who don't have much. 
+                              We're also making it easy for people to donate extra food and money to help others.</span>
+                      </div>
+                      <div class="card-back">
+                          <img src="assets/images/donation system.jpg" alt="" class="p-3" width="300px" height="300px">
+                      </div>
+                  </div>
+              </div>
+  
+              <!-- Flippable Card 3 - Collaborate -->
+              <div class="flippable-card">
+                  <div class="card-inner">
+                      <div class="card-front p-4">
+                          <i class="bi bi-people" id="icon3"></i>
+                          <h3>Collaborate</h3>
+                          <span>Work together with groups that help people. Make it simple for anyone who wants to help by donating. 
+                              Team up with donors to make a bigger impact in supporting those in need.</span>
+                      </div>
+                      <div class="card-back">
+                          <img src="assets/images/collaboration.jpg" alt="" class="p-3" width="300px" height="300px">
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+      <!-- Contact Section -->
+      <div class="section" id="contact">
+          <h2>Contact Us</h2>
+          <p>If you have any questions or concerns, please feel free to contact us using the form below:</p>
+  
+          <div class="contact-container">
+              <!-- Image on the left side -->
+              <div class="contact-image">
+                  <img src="assets/images/contact.png" alt="Contact Image">
+              </div>
+  
+              <!-- Contact form on the right side -->
+              <form class="contact-form">
+                  <div class="row">
+                      <div class="col-md-6">
+                          <label for="contactName">Your Name</label>
+                          <input type="text" id="contactName" class="form-control" placeholder="Name">
+                      </div>
+                      <div class="col-md-6">
+                          <label for="contactEmail">Your Email</label>
+                          <input type="email" id="contactEmail" class="form-control" placeholder="name@example.com">
+                      </div>
+                  </div>
+  
+                  <div class="row">
+                      <div class="col-md-12">
+                          <label for="contactMessage">Your Message</label>
+                          <textarea id="contactMessage" class="form-control" rows="4" placeholder="Enter your message"></textarea>
+                      </div>
+                  </div>
+  
+                  <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+          </div>
+      </div>
+  
+  
+        <!-- Footer -->
+    <footer id="dk-footer">
+      <div class="container">
+          <!-- KINDSHARE Section -->
+          <div class="sec Aboutus">
+              <h2>KINDSHARE</h2>
+              <span class="animate-border border-black"></span>
+              <div class="footer-detail">
+                  <h6>“Your Trash is Their Treasure”</h6>
+              </div>
+          </div>
+  
+          <!-- About Us Section -->
+          <div class="sec QuickLinks">
+              <h2>About Us</h2>
+              <ul>
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="#mission">Mission</a></li>
+                  <li><a href="#contact">Contact</a></li>
+              </ul>
+          </div>
+  
+          <!-- Follow Us Section -->
+          <div class="sec">
+              <h2>Follow Us</h2>
+              <ul class="sci">
+                  <li>
+                      <a href="https://www.facebook.com/kingdomlifebutuan" target="_blank">
+                          <i class="bi bi-facebook" aria-hidden="true"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="https://www.facebook.com/messages/t/1479479188955264/" target="_blank">
+                          <i class="bi bi-messenger" aria-hidden="true"></i>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="KingdomLifeButuan@gmail.com" target="_blank">
+                          <i class="bi bi-envelope" aria-hidden="true"></i>
+                      </a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  
+      <!-- End Contact Container -->
+      <div class="copyrightText">
+          <h6 class="p1">“Together We Share, Together We Care”</h6>
+          <h6 class="p2">
+              Copyright ©
+              <script>
+                  document.write(new Date().getFullYear());
+              </script>
+              || KINDSHARE. All rights reserved
+          </h6>
+      </div>
+    </footer>
+  
+  
+  
+  
+  
+  
+      <script src="vendor/js/bootstrap.bundle.min.js"></script>
+      <script src="assets/js/index.js"></script>
+  </body>
+  </html>
