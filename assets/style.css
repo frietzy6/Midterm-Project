@@ -1,602 +1,601 @@
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: #1870b8; /* Fallback background color */
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: #1870b8; /* Fallback background color */
+  background: linear-gradient(to right, #1870b8, #b71225);
+  color: #fff;
+}
+  
+h1, h2, p{
+    font-weight: bolder;
+    color: black;
+}
+
+ /* Navbar styling */
+.navbar {
+    padding: 0;
+    right: 0;
+    left: 0;
+    top: 0;
     background: linear-gradient(to right, #1870b8, #b71225);
+    position: fixed;
+    z-index: 10;
+    box-shadow: 0 .3rem .6rem rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    height: 80px; /* Adjust the height as needed */
+
+    /* New styles for smaller screens */
+    @media (max-width: 991px) {
+        height: auto;
+    }
+}
+
+.navbar-nav {
+    margin-right: 5rem;
+}
+
+/* Margin for smaller screens */
+@media (max-width: 991px) {
+    .navbar-nav {
+        margin-right: 1rem;
+    }
+}
+
+.nav-item {
+    padding: 0 1.5rem;
+}
+
+.nav-item:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+.nav-link {
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
     color: #fff;
-  }
+    text-align: center;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Added transition for smooth color change */
+}
+
+.nav-link:hover {
+    background: #e91e63;
+    box-shadow: inset 5px 5px 10px #5d0c28, inset -5px -5px 10px #ff309e;
+    border-radius: 30px !important;
+    color: white;
+}
+
+.navbarbrand {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: "Ubuntu";
+    margin-left: 6rem;
+    color: #fff; /* Set the color to white */
+    display: flex;
+    align-items: center;
+}
+
+/* Adjust styles for smaller screens */
+@media (max-width: 991px) {
+    .navbarbrand {
+        margin-left: 1rem;
+        display: none; /* Hide the KINDSHARE title on smaller screens */
+    }
+}
+
+.navbarbrand img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.navbarbrand:hover {
+    transform: scale(1.04);
+    color: #a00505;
+    transition: 0.8s;
+}
+
+.navbarlogo {
+    color: #fff; /* Set the color to white */
+    width: 60px;
+    height: 60px;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-bottom: -10px; /* Adjusted margin to prevent overlapping */
+}
+
+.navbarlogo:hover {
+    cursor: pointer;
+}
+
+/* Page content styling */
+.section {
+    padding-top: 80px; /* Adjust based on navbar height */
+}
+
+/*------------------HOME----------------*/
+.home {
+    text-align: center;
+    padding: 100px;
     
-  h1, h2, p{
-      font-weight: bolder;
-      color: black;
-  }
+}
+
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.home-left {
+    flex: 1;
+    text-align: left;
+}
+
+.home-left h3 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    color: #062036;
+    font-weight: bolder;
+}
+
+.home-left h6 {
+    margin-bottom: 15px;
+    padding-left: 50px;
+}
+
+.btn-primary {
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    font-size: 15px !important;
+    text-transform: uppercase;
+    font-weight: 550;
+    line-height: 30px;
+    text-align: center;
+    padding: 7px 12px;
+    margin-top: 25px;
+    border: 2px solid transparent;
+    background: #e91e63;
+    box-shadow: inset 5px 5px 10px #5d0c28, inset -5px -5px 10px #ff309e;
+    border-radius: 30px !important;
+   
+}
+
+.btn-primary:hover {
+    background-color: #b60c45;
+}
+
+.home-right {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.img-container {
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 20px 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  position: relative;
   
-   /* Navbar styling */
-  .navbar {
-      padding: 0;
-      right: 0;
-      left: 0;
-      top: 0;
-      background: linear-gradient(to right, #1870b8, #b71225);
-      position: fixed;
-      z-index: 10;
-      box-shadow: 0 .3rem .6rem rgba(0, 0, 0, 0.1);
-      justify-content: space-between;
-      height: 80px; /* Adjust the height as needed */
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
   
-      /* New styles for smaller screens */
-      @media (max-width: 991px) {
-          height: auto;
-      }
-  }
-  
-  .navbar-nav {
-      margin-right: 5rem;
-  }
-  
-  /* Margin for smaller screens */
-  @media (max-width: 991px) {
-      .navbar-nav {
-          margin-right: 1rem;
-      }
-  }
-  
-  .nav-item {
-      padding: 0 1.5rem;
-  }
-  
-  .nav-item:hover {
-      transform: scale(1.1);
-      transition: 0.2s;
-  }
-  
-  .nav-link {
-      border-radius: 30px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      text-decoration: none;
-      color: #fff;
-      text-align: center;
-      transition: background-color 0.3s ease, color 0.3s ease; /* Added transition for smooth color change */
-  }
-  
-  .nav-link:hover {
-      background: #e91e63;
-      box-shadow: inset 5px 5px 10px #5d0c28, inset -5px -5px 10px #ff309e;
-      border-radius: 30px !important;
-      color: white;
-  }
-  
-  .navbarbrand {
-      font-size: 2.5rem;
-      font-weight: bold;
-      font-family: "Ubuntu";
-      margin-left: 6rem;
-      color: #fff; /* Set the color to white */
-      display: flex;
-      align-items: center;
-  }
-  
-  /* Adjust styles for smaller screens */
-  @media (max-width: 991px) {
-      .navbarbrand {
-          margin-left: 1rem;
-          display: none; /* Hide the KINDSHARE title on smaller screens */
-      }
-  }
-  
-  .navbarbrand img {
-      width: 60px;
-      height: 60px;
-      margin-right: 10px;
-  }
-  
-  .navbarbrand:hover {
-      transform: scale(1.04);
-      color: #a00505;
-      transition: 0.8s;
-  }
-  
-  .navbarlogo {
-      color: #fff; /* Set the color to white */
-      width: 60px;
-      height: 60px;
-      margin-left: 5px;
-      margin-right: 10px;
-      margin-bottom: -10px; /* Adjusted margin to prevent overlapping */
-  }
-  
-  .navbarlogo:hover {
-      cursor: pointer;
-  }
-  
-  /* Page content styling */
-  .section {
-      padding-top: 80px; /* Adjust based on navbar height */
-  }
-  
-  /*------------------HOME----------------*/
-  .home {
-      text-align: center;
-      padding: 100px;
-      
-  }
-  
-  .home-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-  }
-  
-  .home-left {
-      flex: 1;
-      text-align: left;
-  }
-  
-  .home-left h3 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-      padding-left: 20px;
-      color: #062036;
-      font-weight: bolder;
-  }
-  
-  .home-left h6 {
-      margin-bottom: 15px;
-      padding-left: 50px;
-  }
-  
-  .btn-primary {
-      color: #ffffff;
-      font-family: 'Poppins', sans-serif;
-      cursor: pointer;
-      font-size: 15px !important;
-      text-transform: uppercase;
-      font-weight: 550;
-      line-height: 30px;
-      text-align: center;
-      padding: 7px 12px;
-      margin-top: 25px;
-      border: 2px solid transparent;
-      background: #e91e63;
-      box-shadow: inset 5px 5px 10px #5d0c28, inset -5px -5px 10px #ff309e;
-      border-radius: 30px !important;
-     
-  }
-  
-  .btn-primary:hover {
-      background-color: #b60c45;
-  }
-  
-  .home-right {
-      flex: 1;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-  }
-  
+}
+
+@media (max-width: 768px) {
   .img-container {
-    overflow: hidden;
-    border-radius: 50%;
-    margin: 20px 0;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    position: relative;
-    
+      width: 200px; /* Adjust the size for smaller screens */
+      height: 200px; /* Adjust the size for smaller screens */
   }
-  
-  .img-container img {
+}
+
+/*---------- MISSION-------------- */
+#mission {
+    text-align: center;
+    padding: 100px;
+    background-color: #fffed5;
+}
+
+/* Flippable Cards */
+.flippable-cards-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.flippable-card {
+    width: 300px;
+    height: 320px;
+    perspective: 1000px;
+    margin: 10px;
+}
+
+.card-back img {
+  width: 100%;
+  height: 300px;
+}
+
+.card-inner {
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.flippable-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    
-  }
-  
-  @media (max-width: 768px) {
-    .img-container {
-        width: 200px; /* Adjust the size for smaller screens */
-        height: 200px; /* Adjust the size for smaller screens */
-    }
-  }
-  
-  /*---------- MISSION-------------- */
-  #mission {
-      text-align: center;
-      padding: 100px;
-      background-color: #fffed5;
-  }
-  
-  /* Flippable Cards */
-  .flippable-cards-container {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-top: 20px;
-  }
-  
-  .flippable-card {
-      width: 300px;
-      height: 320px;
-      perspective: 1000px;
-      margin: 10px;
-  }
-  
-  .card-back img {
-    width: 100%;
-    height: 300px;
+    position: absolute;
+    backface-visibility: hidden;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-front {
+    background-color: lavenderblush;
+    color: purple;
+}
+
+.card-back {
+    background-color: white;
+    transform: rotateY(180deg);
+}
+
+span {
+    color: #8f8f8f;
+}
+
+
+
+#icon1 {
+    color: red;
+    font-size: 2rem;
+}
+
+#icon2 {
+    color: #cbfd17;
+    font-size: 2rem;
+}
+
+#icon3 {
+    color: #69c4fd;
+    font-size: 2rem;
+}
+
+/*---------------- CONTACT --------------*/
+#contact {
+    text-align: center;
+    padding: 100px;
+    background: linear-gradient(to right, #f42f46, #E6E6FA);
   }
 
-  .card-inner {
-      width: 300px;
-      height: 300px;
-      transform-style: preserve-3d;
-      transition: transform 0.5s;
+  .contact-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Define two columns */
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px;
+    margin: auto;
+    /* Add margin between columns */
+    grid-column-gap: 20px;
   }
   
-  .flippable-card:hover .card-inner {
-      transform: rotateY(180deg);
+  .contact-image img {
+    max-width: 100%;
+    border-radius: 10px; /* Optional: Add border radius for rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+    margin-right: 20px; /* Adjusted margin for spacing */
   }
   
-  .card-front,
-  .card-back {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      backface-visibility: hidden;
-      justify-content: center;
-      align-items: center;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  .card-front {
-      background-color: lavenderblush;
-      color: purple;
-  }
-  
-  .card-back {
-      background-color: white;
-      transform: rotateY(180deg);
-  }
-  
-  span {
-      color: #8f8f8f;
-  }
-  
-  
-  
-  #icon1 {
-      color: red;
-      font-size: 2rem;
-  }
-  
-  #icon2 {
-      color: #cbfd17;
-      font-size: 2rem;
-  }
-  
-  #icon3 {
-      color: #69c4fd;
-      font-size: 2rem;
-  }
-  
-  /*---------------- CONTACT --------------*/
-  #contact {
-      text-align: center;
-      padding: 100px;
-      background: linear-gradient(to right, #f42f46, #E6E6FA);
-    }
-  
+  /* Adjust spacing for smaller screens */
+  @media (max-width: 767px) {
     .contact-container {
-      display: grid;
-      grid-template-columns: 1fr 2fr; /* Define two columns */
-      justify-content: space-between;
-      align-items: center;
-      max-width: 800px;
-      margin: auto;
-      /* Add margin between columns */
-      grid-column-gap: 20px;
+      flex-direction: column; /* Adjust for smaller screens if needed */
     }
-    
+  
     .contact-image img {
-      max-width: 100%;
-      border-radius: 10px; /* Optional: Add border radius for rounded corners */
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
-      margin-right: 20px; /* Adjusted margin for spacing */
+      margin-bottom: 20px;
+      margin-right: 0; /* Reset margin for smaller screens */
     }
-    
-    /* Adjust spacing for smaller screens */
-    @media (max-width: 767px) {
-      .contact-container {
-        flex-direction: column; /* Adjust for smaller screens if needed */
-      }
-    
-      .contact-image img {
-        margin-bottom: 20px;
-        margin-right: 0; /* Reset margin for smaller screens */
-      }
-    }
-    
-    /* Add these styles for the contact form */
-    .contact-form {
-      max-width: 600px;
-      width: 100%;
-      color: black;
-    }
-    
-    .contact-form label {
-      display: block;
-      margin-bottom: 8px;
-      text-align: left; /* Align labels to the left */
-    }
-    
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-sizing: border-box; /* Include padding and border in width calculation */
-    }
-    
-    .contact-form button {
-      width: 150px;
-      height: 45px;
-      border: none;
-      font-size: 1.5rem;
-      font-weight: bolder;
-      background: #e91e63;
-      color: #000000;
-      box-shadow: inset 5px 5px 10px #5d0c28, inset -5px -5px 10px #ff309e;
-      border-radius: 30px;
-      transition: background-color 0.3s ease;
-    }
-    
-    .contact-form button:hover {
-      background-color: #d60047;
-      font-size: 1.5rem;
-      color: white;
-    }
+  }
   
+  /* Add these styles for the contact form */
+  .contact-form {
+    max-width: 600px;
+    width: 100%;
+    color: black;
+  }
   
+  .contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    text-align: left; /* Align labels to the left */
+  }
   
-  /* Footer styles */
-  #dk-footer {
-      background-color: black;
-      color: white;
-      padding: 40px 0;
-    }
-    
-    #dk-footer h2 {
-      color: white;
-    }
-    
-    #dk-footer .animate-border {
-      background-color: white;
-    }
-    
-    #dk-footer .container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-    
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Include padding and border in width calculation */
+  }
+  
+  .contact-form button {
+    width: 150px;
+    height: 45px;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    background: #e91e63;
+    color: #000000;
+    box-shadow: inset 5px 5px 10px #5d0c28, inset -5px -5px 10px #ff309e;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #d60047;
+    font-size: 1.5rem;
+    color: white;
+  }
+
+
+
+/* Footer styles */
+#dk-footer {
+    background-color: black;
+    color: white;
+    padding: 40px 0;
+  }
+  
+  #dk-footer h2 {
+    color: white;
+  }
+  
+  #dk-footer .animate-border {
+    background-color: white;
+  }
+  
+  #dk-footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  #dk-footer .sec {
+    width: 100%; /* Full width initially */
+    text-align: center;
+    margin-bottom: 10px; /* Add margin for spacing */
+  }
+  
+  @media (min-width: 576px) {
+    /* Adjust width for small screens */
     #dk-footer .sec {
-      width: 100%; /* Full width initially */
-      text-align: center;
-      margin-bottom: 10px; /* Add margin for spacing */
+      width: 48%; /* 2 columns on small screens */
     }
-    
-    @media (min-width: 576px) {
-      /* Adjust width for small screens */
-      #dk-footer .sec {
-        width: 48%; /* 2 columns on small screens */
-      }
+  }
+  
+  @media (min-width: 768px) {
+    /* Adjust width for medium screens */
+    #dk-footer .sec {
+      width: 30%; /* 3 columns on medium screens */
     }
-    
-    @media (min-width: 768px) {
-      /* Adjust width for medium screens */
-      #dk-footer .sec {
-        width: 30%; /* 3 columns on medium screens */
-      }
+  }
+  
+  @media (min-width: 992px) {
+    /* Adjust width for large screens */
+    #dk-footer .sec {
+      width: 23%; /* 4 columns on large screens */
     }
-    
-    @media (min-width: 992px) {
-      /* Adjust width for large screens */
-      #dk-footer .sec {
-        width: 23%; /* 4 columns on large screens */
-      }
-    }
-    
-    #dk-footer p {
-      margin-bottom: 0;
-    }
-    
-    #dk-footer ul {
-      padding: 0;
-      list-style: none;
-    }
-    
-    #dk-footer ul li a{
-      margin-bottom: 10px;
-      
-    }
-  
-    #dk-footer .sci {
-      display: flex;
-      list-style: none;
-      padding: 0;
-      justify-content: center;
-    }
-    
-    #dk-footer .sci a {
-      color: white;
-      margin-right: 15px;
-    }
-    
-    #dk-footer .sci i {
-      font-size: 24px;
-    }
-    
-    #dk-footer .copyrightText {
-      text-align: center;
-      margin-top: 20px;
-    }
-    
-    #dk-footer .copyrightText .p1 {
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    
-    #dk-footer .copyrightText .p2 {
-      font-size: 14px;
-      margin-bottom: 0;
-    }
-    
-    
-  
-    /* Custom styles for the donation modal */
-  .modal-content {
-      background-color: #f1f1f1; /* Background color for the modal content */
   }
   
-  .modal-header {
-      background-color: #5bc0de; /* Background color for the modal header */
-      color: white; /* Text color for the modal header */
+  #dk-footer p {
+    margin-bottom: 0;
   }
   
-  .nav-tabs {
-      border-bottom: 2px solid #5bc0de; /* Border color for the tabs */
+  #dk-footer ul {
+    padding: 0;
+    list-style: none;
   }
   
-  .nav-tabs .nav-link {
-      color: #5bc0de; /* Text color for the tabs */
-  }
-  
-  .nav-tabs .nav-link.active {
-      background-color: #5bc0de; /* Background color for the active tab */
-      color: white; /* Text color for the active tab */
-  }
-  
-  .tab-pane {
-      padding: 20px; /* Add padding to the tab panes */
-  }
-  
-  /* Custom CSS for Donation Form */
-  #items {
-      color: black; /* Set text color to black */
-  }
-  
-  #items label {
-      color: black; /* Set text color for labels */
-  }
-  
-  #items select,
-  #items textarea,
-  #items input {
-      color: black; /* Set text color for input, select, and textarea */
-  }
-  
-  #items button {
-      color: #fff; /* Set text color for the button */
-  }
-  
-  /* Custom CSS for Food Donation Form */
-  #food {
-      color: black; /* Set text color to black */
-  }
-  
-  #food label {
-      color: black; /* Set text color for labels */
-  }
-  
-  #food select,
-  #food textarea,
-  #food input {
-      color: black; /* Set text color for input, select, and textarea */
-  }
-  
-  #food button {
-      color: #fff; /* Set text color for the button */
-  }
-  
-  /* Money Form Styles */
-  #money .form {
-      color: black; /* Set text color to black */
-  }
-  
-  #money .form-label {
-      color: black; /* Set the color for form labels */
-  }
-  
-  #money .form-control {
-      border: none; /* Remove border for form controls */
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      color: black; /* Set text color for input */
-      background-color: white; /* Background color for input */
-      margin-bottom: 15px;
-  }
-  
-  #money .form-select {
-      border: none; /* Remove border for form select */
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      color: black; /* Set text color for select */
-      background-color: white; /* Background color for select */
-      margin-bottom: 15px;
-  }
-  
-  #money .btn-primary {
-     
-      height: 45px;
-      border: none;
-      font-size: 1.5rem;
-      font-weight: bolder;
-      background: #e91e63;
-      color: #ffffff;
-      box-shadow: inset 5px 5px 10px #5d0c28, inset -5px -5px 10px #ff309e;
-      border-radius: 30px;
-      transition: background-color 0.3s ease;
-  }
-  
-  #money .btn-primary:hover {
-      background-color: #b60c45;
-      font-size: 1.5rem;
-      color: white;
-  }
-  
-  /* Credit Card Info Form */
-  #creditCardInfo form {
-    color: #000; /* Black font color */
-    padding: 20px; /* Add padding to the form */
-    margin: 10px; /* Add margin around the form */
-  }
-  
-  /* Styles for hidden pop-up info form for GCash donation */
-  #gcashInfo {
-    display: none;
-    color: black; /* Black font color */
-    padding: 20px; /* Add padding for spacing */
+  #dk-footer ul li a{
+    margin-bottom: 10px;
     
   }
-  
-  #gcashInfo h5 {
-    color: #e86060; /* Red color for h5 */
-    margin-bottom: 10px; /* Add margin below h5 */
+
+  #dk-footer .sci {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
   }
   
-  #gcashInfo form {
-    margin-top: 10px; /* Add margin above form */
-    margin-left: 5px;
-  
+  #dk-footer .sci a {
+    color: white;
+    margin-right: 15px;
   }
   
-  #gcashInfo .mb-3 {
-    margin-bottom: 15px; /* Add margin bottom for form fields */
+  #dk-footer .sci i {
+    font-size: 24px;
+  }
+  
+  #dk-footer .copyrightText {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  #dk-footer .copyrightText .p1 {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  #dk-footer .copyrightText .p2 {
+    font-size: 14px;
+    margin-bottom: 0;
   }
   
   
+
+  /* Custom styles for the donation modal */
+.modal-content {
+    background-color: #f1f1f1; /* Background color for the modal content */
+}
+
+.modal-header {
+    background-color: #5bc0de; /* Background color for the modal header */
+    color: white; /* Text color for the modal header */
+}
+
+.nav-tabs {
+    border-bottom: 2px solid #5bc0de; /* Border color for the tabs */
+}
+
+.nav-tabs .nav-link {
+    color: #5bc0de; /* Text color for the tabs */
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #5bc0de; /* Background color for the active tab */
+    color: white; /* Text color for the active tab */
+}
+
+.tab-pane {
+    padding: 20px; /* Add padding to the tab panes */
+}
+
+/* Custom CSS for Donation Form */
+#items {
+    color: black; /* Set text color to black */
+}
+
+#items label {
+    color: black; /* Set text color for labels */
+}
+
+#items select,
+#items textarea,
+#items input {
+    color: black; /* Set text color for input, select, and textarea */
+}
+
+#items button {
+    color: #fff; /* Set text color for the button */
+}
+
+/* Custom CSS for Food Donation Form */
+#food {
+    color: black; /* Set text color to black */
+}
+
+#food label {
+    color: black; /* Set text color for labels */
+}
+
+#food select,
+#food textarea,
+#food input {
+    color: black; /* Set text color for input, select, and textarea */
+}
+
+#food button {
+    color: #fff; /* Set text color for the button */
+}
+
+/* Money Form Styles */
+#money .form {
+    color: black; /* Set text color to black */
+}
+
+#money .form-label {
+    color: black; /* Set the color for form labels */
+}
+
+#money .form-control {
+    border: none; /* Remove border for form controls */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: black; /* Set text color for input */
+    background-color: white; /* Background color for input */
+    margin-bottom: 15px;
+}
+
+#money .form-select {
+    border: none; /* Remove border for form select */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: black; /* Set text color for select */
+    background-color: white; /* Background color for select */
+    margin-bottom: 15px;
+}
+
+#money .btn-primary {
+   
+    height: 45px;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bolder;
+    background: #e91e63;
+    color: #ffffff;
+    box-shadow: inset 5px 5px 10px #5d0c28, inset -5px -5px 10px #ff309e;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+#money .btn-primary:hover {
+    background-color: #b60c45;
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* Credit Card Info Form */
+#creditCardInfo form {
+  color: #000; /* Black font color */
+  padding: 20px; /* Add padding to the form */
+  margin: 10px; /* Add margin around the form */
+}
+
+/* Styles for hidden pop-up info form for GCash donation */
+#gcashInfo {
+  display: none;
+  color: black; /* Black font color */
+  padding: 20px; /* Add padding for spacing */
+  
+}
+
+#gcashInfo h5 {
+  color: #e86060; /* Red color for h5 */
+  margin-bottom: 10px; /* Add margin below h5 */
+}
+
+#gcashInfo form {
+  margin-top: 10px; /* Add margin above form */
+  margin-left: 5px;
+
+}
+
+#gcashInfo .mb-3 {
+  margin-bottom: 15px; /* Add margin bottom for form fields */
+}
+

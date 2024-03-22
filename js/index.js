@@ -93,3 +93,4 @@ function showPaymentInfo() {
         document.getElementById("creditCardInfo").style.display = "block";
     }
 }
+
